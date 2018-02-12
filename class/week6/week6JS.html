@@ -24,7 +24,6 @@
   .height1 {
     height: 150px;
   }
-
   .height2 {
     height: 600px;
   }
@@ -70,72 +69,57 @@
       function getRandomColor() {
         return Math.floor(Math.random() * 255);
       }
-
       //get all the elements (divs) with the class .randomColor
       var randomColor = $(".randomColor");
-
       $.each(randomColor, function(index, item) {
         $(this).css("background-color", "RGB(" + getRandomColor() + "," + getRandomColor() + "," + getRandomColor() + ")");
       })
-
     })
   </script>
 
 
   <script type="text/javascript">
     $(document).ready(function() {
-
-
       function writeToCenter(str) {
-        $(".myConsole").append(str);
-
+        $(".myConsole").append("<br>"+str);
       }
-
+      function writeObjectToCenter(obj) {
+        $(".myConsole").append("<br>"+ JSON.stringify(obj) );
+      }
       writeToCenter("<h4>testing my console</h4>");
-
       function addNumbers(num1, num2){
-
-        var result = num1 + num2;
-
-        return result;
-
+        //var result = num1 + num2;
+        //return result;
+        return num1 + num2; // exact same thing but the code is more efficient
       }
-
       var firstNumber = 10;
       var secondNumber = 15;
-
       var thirdNumber = addNumbers(firstNumber, secondNumber);
-
-      writeToCenter("third number is "+thirdNumber);
-
-      writeToCenter("another number is"+addNumbers(6,9));
-
-      var myLp={
-        "artist";"aesop rock",
-        "label";"ryhmesayers",
-        "number of songs";"15",
-        "colour of lp";"green",
-        "album";"impossible kid"
+      writeToCenter("third number is  "+thirdNumber);
+      writeToCenter("another number is  "+addNumbers(6,9));
+      //declare empty object with {}
+          var myLp = {
+      // key: value
+      "color":"green",
+      "label":"rhymesayers",
+      "artist":"aesoprock",
+      "numberofsongs":"15"
       };
-//add a new key value pair
-
-    myLp.country="America";
-
-      writeToCenter(myLp);
-
-//loop through every key
-
-      for(var key in myLp){
-        writeToCenter("this key is:"+key+"and the value is"+myLpkey]);
-      }
-
-//reference a key this way
-      writeToCenter("here is a value:"=myLp["price"]);
-
-//actually the conventional way is this way
-      writeToCenter("here is a value:"+myLp.screen);
-
-    })
+      //add a new key value pair
+      myLp.country = "America";
+      myLp.release = 2016;
+      myLp.isAffordable = true;
+      myLp.topSongs = ["supercell","shrunk","molecules"]
+        writeObjectToCenter(myLp);
+        //Loop through every key
+        for(var key in myLp){
+          writeToCenter("this key is: " +key+ " and the value is " +myLp[key]);
+        }
+        //reference a key this way:
+        writeToCenter("here is a value: " +myLp["price"]);
+        //actually the conventional way is this way: dot notation
+        writeToCenter("here is a value: "+myLp.screen);
+    }) //end of document
   </script>
 
 

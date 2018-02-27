@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>hip hop's greatest</title>
+<style media="screen">
+  .height1{
+    height: 75px;
+  }
+  .height2{
+    height:600px;
+  }
+</style>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 height1 randomColor">
+
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-2 randomColor">
+
+    </div>
+    <div class="col-md-8 output">
+
+    </div>
+    <div class="col-md-2 randomColor">
+
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 height1 randomColor">
+
+    </div>
+  </div>
+</div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        //get a random color between 0 and 255
+        function getRandomColor() {
+          return Math.floor(Math.random() * 255);
+        }
+
+        var randomColor = $(".randomColor");
+
+        $.each(randomColor, function(index, item) {
+          $(this).css("background-color", "RGB(" + getRandomColor() + "," + getRandomColor() + "," + getRandomColor() + ")");
+        })
+
+      })
+    </script>
+
+<script>
+  var hipHopArtists =
+  [
+{
+  "album":"skelethon",
+  "artist":"aesop rock",
+  "release":"2012",
+  "numberOfSongs":"15",
+  "imgUrl":"http://kmair028.github.io/class/week7/practice_work.html/hipHopAlbum1.jpg"
+  },
+{
+  "album":"toPimpAButterfly",
+  "artist":"kendrickLamar",
+  "release":"2015",
+  "numberOfSongs":"16",
+  "imgUrl":"http://kmair028.github.io/class/week7/practice_work.html/HipHopAlbum5.jpg"
+  },
+{
+  "album":"the low end theory",
+  "artist":"a tribe called quest",
+  "release":"1991",
+  "numberOfSongs":"14",
+  "imgUrl":"http://kmair028.github.io/class/week7/practice_work.html/HipHopAlbum4.jpg"
+  },
+{
+  "album":"yessir whatever",
+  "artist":"quasimoto",
+  "release":"2013",
+  "numberOfSongs":"12",
+  "imgUrl":"http://kmair028.github.io/class/week7/practice_work.html/HipHopAlbum3.jpg"
+  },
+{
+  "album":"madvillain",
+  "artist":"mf doom",
+  "release":"2004",
+  "numberOfSongs":"21",
+  "imgUrl":"http://kmair028.github.io/class/week7/practice_work.html/hipHopAlbum2.png"
+  },
+];
+
+$(document).ready(function(){
+  //$(".output").html("test output");
+  var html="<table class='table table-striped table-hover'>"+
+  "<tr>"+
+    "<th>album</th>"+
+    "<th>artist</th>"+
+    "<th>release</th>"+
+    "<th>numberOfSongs</th>"+
+    "<th>imgUrl</th>"+
+  "</tr>";
+
+//here is the loop of the array 'cats'
+for(var i=0;i<hipHopArtists.length;i++){
+  console.log("i "+i);
+  html+= "<tr>"+
+      "<td>"+hipHopArtists[i].album+"</td>"+
+      "<td>"+hipHopArtists[i].artist+"</td>"+
+      "<td>"+hipHopArtists[i].release+"</td>"+
+      "<td>"+hipHopArtists[i].numberOfSongs+"</td>"+
+      "<td><img src='"+hipHopArtists[i].imgUrl+"' /></td>"+
+    "</tr>";
+}
+html += "</table>";
+$(".output").html(html);
+
+});
+
+</script>
+
+  </body>
+</html>

@@ -1,0 +1,43 @@
+[
+  {
+    "location":"germany",
+    "albumTitle":"ships",
+    "source":"https://img.discogs.com/ujssC-JzkPh5HhUQ3aeXoE4pHc4=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-4216190-1358789867-4297.jpeg.jpg",
+    "release":"unknown",
+    "numberOfTracks":13,
+    "artist":"wun two",
+  },
+  {
+    "location":"germany",
+    "albumTitle":"rio",
+    "source":"https://img.discogs.com/n0BBj2Jzhmz7YTPLT1koXD1Rgts=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-9841847-1487196156-1625.jpeg.jpg",
+    "release":2014,
+    "numberOfTracks":21,
+    "artist":"wun two"
+  },
+  {
+    "location":"germany",
+    "albumTitle":"penthouse",
+    "source":"https://img.discogs.com/lTa2FMqrvWxT3SaSuxG1SLGdBh4=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-6420470-1418767222-4022.jpeg.jpg",
+    "release":2014,
+    "numberOfTracks":21,
+    "artist":"wun two"
+  },
+  {
+    "location":"germany",
+    "albumTitle":"first_date",
+    "source":"https://img.discogs.com/_-S6XJRR3qxNbzqjqCmMj1xWbFY=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-11008699-1508147174-4032.jpeg.jpg",
+    "release":2014,
+    "numberOfTracks":12,
+    "artist":"wun two"
+  },
+  {
+    "location":"germany",
+    "albumTitle":"snow,vol.2",
+    "source":"https://img.discogs.com/nc_04J0LIrky5_LG09St1yaIyms=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-7651977-1445972197-8718.jpeg.jpg",
+    "release":2015,
+    "numberOfTracks":10,
+    "artist":"wun two"
+  }
+
+]

@@ -33,7 +33,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   <script>
     //get the JSON
-    var url = "https://github.com/kmair028/kmair028.github.io/blob/master/class/week8/assets/myjson.json";
+    var url = "kmair028.github.io/class/week8/assets/myjson.json";
 
     $.getJSON(url).done(function(data) {
       console.log("success! ");
@@ -41,7 +41,7 @@
       //paste everything here
       var dataHtml = "";
       for (var i = 0; i < data.length; i++) {
-        dataHtml += "<div>" + data[i].title + "</div>";
+        dataHtml += "<div>" + data[i].location + "</div>";
       }
       //when the document is ready
       $(document).ready(function() {

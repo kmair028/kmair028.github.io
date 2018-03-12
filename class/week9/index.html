@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <style media="screen">
+    .myHtml{
+      display:flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+      .font20{
+        font-size:20px;
+      }
+      .boldText{
+        font-weight: bold;
+      }
+
+      .greyBackground{
+        background-color: #efefef;
+      }
+  </style>
+
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 myHtml">
+
+        </div>
+      </div>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script>
+
+  var url="https://sluu01.github.io/class/week8/myJSON.json";
+  //{
+  //  "class":"food",
+  //  "name":"sushi",
+  //  "caption":"raw fish wrapped in rice and seaweed",
+  //  "type":"fish",
+  //  "temperature":"cold",
+  //  "origin":"Japan"
+  //}
+
+function processData(d){
+  console.dir(d);
+  var html="";//make a variable to hold the html
+
+  //for loop
+  for(var i=0;i<d.length;i++){
+    html+="<div class='myItem'>"; //container for this item
+    html+="<div class='font20 boldText'>"+d[i].name+"</div>";
+    html+="<div>"+d[i].texture+"</div>";
+    html+="<div>"+d[i].caption+"</div>";
+    html+="<div>"+d[i].type+"</div>";
+    html+="<div>"+d[i].temperature+"</div>";
+    html+="<div>"+d[i].origin+"</div>";
+    html+="<button type='button' class='itemButton autofocusbtn btn-default'>Click!</button>";
+    html+="</div>";
+
+  }
+  //write html to the page
+  $(document).ready(function(){
+    $(".myHtml").html(html);
+
+    //write an event to handle a click (event-handler functions)
+    $(".itemButton").on("click", function(){
+      console.log("click");
+      $(this).closest(".myItem").toggleClass("greyBackground");
+    })
+
+  })
+}
+  //$getJSON
+  $.get(url)
+  .done(function(data){ //that comes back is put into "data"
+  console.log("success!! ");
+
+  processData(data);
+
+})
+.fail(function(data){
+  console.log("failed "+JSON.stringify(data));
+})
+  </script>
+  </body>
+</html>

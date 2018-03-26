@@ -1,0 +1,34 @@
+{
+  "Sheet1": {
+    "1": {
+      "itemId": 1,
+      "kevMaiSpecies": "Mallard",
+      "kevMaiWingspan": "81-98cm",
+      "kevMaiImgUrl": "kmair028.github.io/class/week11/imgs/Mallard-Duck.jpg"
+    },
+    "2": {
+      "itemId": 2,
+      "kevMaiSpecies": "Lesser Whistling Duck",
+      "kevMaiWingspan": "35-40cm",
+      "kevMaiImgUrl": "kmair028.github.io/class/week11/imgs/Whistling-Duck.jpeg"
+    },
+    "3": {
+      "itemId": 3,
+      "kevMaiSpecies": "Wood Duck",
+      "kevMaiWingspan": "28-39cm",
+      "kevMaiImgUrl": "kmair028.github.io/class/week11/imgs/Wood-Duck.jpg"
+    },
+    "4": {
+      "itemId": 4,
+      "kevMaiSpecies": "Marbled Duck",
+      "kevMaiWingspan": "20-28cm",
+      "kevMaiImgUrl": "kmair028.github.io/class/week11/imgs/Marbled-Duck.jpg"
+    },
+    "5": {
+      "itemId": 5,
+      "kevMaiSpecies": "Ruddy Duck",
+      "kevMaiWingspan": "37-42cm",
+      "kevMaiImgUrl": "kmair028.github.io/class/week11/imgs/Ruddy-Duck.jpg"
+    }
+  }
+}

@@ -95,66 +95,103 @@
         //after you will create a JSON file which will be an option here
       };
       //loop through the object
-      for (var key in options){
-        html+="<option value='"+options[key]+"'>"+key+"</option>";
+      for (var key in options) {
+        html += "<option value='" + options[key] + "'>" + key + "</option>";
       }
       //write the options to the select
       $(".selectContainer").find("select").html(html);
 
     }
-//will contain all the events
-    function initEvents(){
+    //will contain all the events
+    function initEvents() {
       //do this when user changes teh select
-        $(".selectContainer").find("select").on("change", function(){
-          var val = $(this).val();
+      $(".selectContainer").find("select").on("change", function() {
+        var val = $(this).val();
 
-          if (val){//if val exists
-            $.get(val)//use the url to get the json
-            .done(function(data){//success
+        if (val) { //if val exists
+          $.get(val) //use the url to get the json
+            .done(function(data) { //success
               console.log("success get select json! ");
               console.dir(data);
               writeJSONToDOM(data.Sheet1);
             })
-            .fail(function(data){//fail
+            .fail(function(data) { //fail
               console.log("fail get select json! ");
               console.dir(data);
             })
-          }
-          //alert("value "+val);
-        })
+        }
+        //alert("value "+val);
+      })
     }
 
-    function writeJSONToDOM(d){
-      var html="";
+    function writeJSONToDOM(d) {
+      var html = "";
 
-      for(var jsonObj in d){
-        html+="<div data-id='"+jsonObj+"' class='itemContainer'>";
-        for (var key in d[jsonObj]){//loop through the keys of each object
+      for (var jsonObj in d) {
+        html += "<div data-id='" + jsonObj + "' class='itemContainer'>";
+        for (var key in d[jsonObj]) { //loop through the keys of each object
 
           var str = String(d[jsonObj][key]);
 
-          if (key==="itemId"){
-            continue;//continue mean skip this iteration of the loop
+          if (key === "itemId") {
+            continue; //continue mean skip this iteration of the loop
           }
-          if (str.indexOf("github")!==-1){
+          if (str.indexOf("github") !== -1) {
             //if 'github' text appears in the value (-1 means not found)
-            html+="<div class='imageContainer'><img src='https://"+d[jsonObj][key]+"'></div>";
+            html += "<div class='imageContainer'><img src='https://" + d[jsonObj][key] + "'></div>";
+          } else { //otherwise use the key as teh class and teh value as teh text
+            html += "<div class='" + key + "'>" + d[jsonObj][key] + "</div>";
           }
-          else{//otherwise use the key as teh class and teh value as teh text
-            html+="<div class='"+key+"'>"+d[jsonObj][key]+"</div>";
-          }
-        }//inner loop
+        } //inner loop
 
-       html+="<div class='buttonContainer'>";
-       html+="<button type='button' class='buyButton btn-default btn'>Buy</button>";
-       html+="</div>";
-       html+="</div>";
+        html += "<div class='buttonContainer'>";
+        html += "<button type='button' class='buyButton btn-default btn'>Buy</button>";
+        html += "</div>";
+        html += "</div>";
 
-     }//first for loop
+      } //first for loop
 
-        //loop this here
+      //loop this here
       $(".output").html(html);
     }
+
+    var formHtml = "";
+    var formHtml = "kmair028.github.io/class/week12/partial.html";
+
+    $.get(fromHtml) //use the url to get the json
+      .done(function(data) { //success
+        console.log("success get formHtml! ");
+        console.dir(data);
+        formHtml=data;
+
+        $(document).ready(function() {
+          getOptions();
+          getAds();
+          initEvents();
+          $(".selectContainer").find("select").change();
+          $("body").fadeIn();
+        })
+
+      .fail(function(data) { //fail
+        console.log("fail get select json! ");
+        console.dir(data);
+      })
+    }
+    //alert("value "+val);
+    })
+    }
+    $(".body").on("click", ".myButton", function(){
+      console.log("clicked buy!");
+      //closest goes up the tree to find the first match
+      var thisItem=$(this).closest(".itemContainer")
+      var itemId=$(this).attr("data-id");
+      //write this item + form HTML
+
+      //prevent multiple click initEvents
+      return false;
+    })
+
+
     $(document).ready(function() {
       getOptions();
       getAds();

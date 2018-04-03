@@ -137,7 +137,23 @@ var canvas = document.getElementById("myCanvas"); //where we draw it
 canvas.width = screen.availWidth;
 canvas.height = screen.availHeight;
 //a bunch of sprite data
-var spriteImages = [{
+var spriteImages = [
+
+  {
+      "spriteMapUrl": "images/alien_Ufo.png",
+      "numFrames":10,
+      "width": 1000,
+      "height": 100,
+      "name": "saucer_sprites"
+    },
+  {
+      "spriteMapUrl": "images/coin-sprite-animation.png",
+      "numFrames": 10,
+      "width": 1000,
+      "height": 100,
+      "name": "coin"
+    },
+  {
     "spriteMapUrl": "images/coin-sprite-animation.png",
     "numFrames": 10,
     "width": 1000,
@@ -158,6 +174,7 @@ var spriteImages = [{
     "height": 200,
     "name": "cat"
   }
+
 ];
 var animations = []; //an array to hold the currently existing sprite obects
 var maxAnimations = spriteImages.length; //how many animations we want on the screen at any one time
